@@ -27,13 +27,7 @@ import ForgotPasswordForm from "./SampleForms/ForgotPasswordForm";
 
 import Table from "./Table";
 
-import {
-  leaveData,
-  productData,
-  serviceData,
-  tabListData,
-  rowData
-} from "./data";
+import { leaveData, productData, tabListData, rowData } from "./data";
 
 function editRow(e = null, id) {
   console.log(id);
