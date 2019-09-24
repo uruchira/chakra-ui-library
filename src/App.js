@@ -5,7 +5,7 @@ import AlertBasic from "./components/basic/Alert";
 import AvatarBasic from "./components/basic/Avatar";
 import SpinnerBasic from "./components/basic/Spinner";
 import TooltipBasic from "./components/basic/Tooltip";
-import { useWrapperToast } from "./components/basic/Toast";
+import { useToast } from "./components/basic/Toast";
 
 import ButtonBasic from "./components/form/Button";
 import CheckboxBasic from "./components/form/Checkbox";
@@ -116,7 +116,7 @@ const App = () => {
     status: "info"
   };
 
-  const [setToast] = useWrapperToast(configs);
+  const [setToast] = useToast(configs);
 
   const onCheckboxChange = e => {
     onNewMemberChange(e.target.checked);
