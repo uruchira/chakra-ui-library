@@ -1,10 +1,11 @@
 import React, { useState, useMemo } from "react";
-import { Heading, Text, Stack, Button, useToast } from "@chakra-ui/core";
+import { Heading, Text, Stack, Button } from "@chakra-ui/core";
 
 import AlertBasic from "./components/basic/Alert";
 import AvatarBasic from "./components/basic/Avatar";
 import SpinnerBasic from "./components/basic/Spinner";
 import TooltipBasic from "./components/basic/Tooltip";
+import { useWrapperToast } from "./components/basic/Toast";
 
 import ButtonBasic from "./components/form/Button";
 import CheckboxBasic from "./components/form/Checkbox";
@@ -105,10 +106,17 @@ const columnData = [
   }
 ];
 
-function App() {
+const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isNewMember, onNewMemberChange] = useState(false);
   const [leave, setLeaveValue] = useState("casual");
+  const configs = {
+    title: "Hi, Ruchira",
+    description: "Welcome to Cyberjaya",
+    status: "info"
+  };
+
+  const [setToast] = useWrapperToast(configs);
 
   const onCheckboxChange = e => {
     onNewMemberChange(e.target.checked);
@@ -123,19 +131,6 @@ function App() {
   const submit = () => {
     console.log("Submitted...");
     setIsOpen(false);
-  };
-
-  const toast = useToast();
-
-  const showToast = () => {
-    toast({
-      title: "Account created.",
-      description: "We've created your account for you.",
-      status: "success",
-      duration: 9000,
-      isClosable: true,
-      position: "bottom-right"
-    });
   };
 
   const [isAlertDialogOpen, setAlertDialogOpen] = React.useState();
@@ -377,7 +372,7 @@ function App() {
               <Text fontSize="lg">Toast</Text>
             </td>
             <td>
-              <Button onClick={showToast}>Show Toast</Button>
+              <Button onClick={setToast}>Say Hi...</Button>
             </td>
           </tr>
           <tr>
@@ -475,6 +470,6 @@ function App() {
       </table>
     </div>
   );
-}
+};
 
 export default App;
