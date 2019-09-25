@@ -8,6 +8,7 @@
     "@emotion/styled": "^10.0.17",
     "emotion-theming": "^10.0.18",
     "react": "^16.9.0",
+    "react-datepicker": "^2.9.6",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.1",
     "react-table": "^7.0.0-beta.0"

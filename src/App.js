@@ -17,6 +17,9 @@ import AlertDialogBasic from "./components/advanced/AlertDialog";
 import ModalBasic from "./components/advanced/Modal";
 import TabsBasic from "./components/advanced/Tabs";
 
+import DatePicker from "./DateTime/DatePickInput";
+import TimePicker from "./DateTime/TimePickInput";
+
 import MainAccordion from "./Accordion/MainAccordion";
 import MainAccordionItem from "./Accordion/MainAccordionItem";
 
@@ -107,40 +110,40 @@ const columnData = [
 ];
 
 const App = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isNewMember, onNewMemberChange] = useState(false);
-  const [leave, setLeaveValue] = useState("casual");
   const configs = {
     title: "Hi, Ruchira",
     description: "Welcome to Cyberjaya",
     status: "info"
   };
-
   const [setToast] = useToast(configs);
 
+  const [isNewMember, onNewMemberChange] = useState(false);
   const onCheckboxChange = e => {
     onNewMemberChange(e.target.checked);
   };
 
+  const [leave, setLeaveValue] = useState("casual");
   const onRadioGroupChange = e => {
     setLeaveValue(e.target.value);
   };
 
+  const [isOpen, setIsOpen] = useState(false);
   const open = () => setIsOpen(true);
   const close = () => setIsOpen(false);
   const submit = () => {
-    console.log("Submitted...");
     setIsOpen(false);
   };
 
-  const [isAlertDialogOpen, setAlertDialogOpen] = React.useState();
+  const [isAlertDialogOpen, setAlertDialogOpen] = useState();
   const onAlertDialogClose = () => setAlertDialogOpen(false);
 
   const [comment, setComment] = useState("");
-
   const onCommentChange = e => {
     setComment(e.target.value);
   };
+
+  const [effectiveDate, setEffectiveDate] = useState(null);
+  const [startTime, setStartTime] = useState(new Date());
 
   const columns = useMemo(() => columnData, []);
 
@@ -338,6 +341,28 @@ const App = () => {
                 value={comment}
                 placeholder="Your comment goes here..."
                 onChange={onCommentChange}
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <Text fontSize="lg">Date Picker</Text>
+            </td>
+            <td>
+              <DatePicker
+                value={effectiveDate}
+                onChange={date => setEffectiveDate(date)}
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <Text fontSize="lg">Time Picker</Text>
+            </td>
+            <td>
+              <TimePicker
+                value={startTime}
+                onChange={date => setStartTime(date)}
               />
             </td>
           </tr>

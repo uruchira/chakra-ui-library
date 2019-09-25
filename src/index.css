@@ -484,6 +484,11 @@ img {
   border-style: solid;
 }
 
+input[type="text"],
+input[type="password"] {
+  border-width: 1px;
+}
+
 textarea {
   resize: vertical;
 }
