@@ -23,6 +23,7 @@ import TimePicker from "./DateTime/TimePickInput";
 import MainAccordion from "./Accordion/MainAccordion";
 import MainAccordionItem from "./Accordion/MainAccordionItem";
 
+import Calender from "./Calender";
 import SimpleTabs from "./Tabs";
 
 import AddUserForm from "./SampleForms/AddUserForm";
@@ -31,7 +32,7 @@ import ForgotPasswordForm from "./SampleForms/ForgotPasswordForm";
 
 import Table from "./Table";
 
-import { leaveData, productData, tabListData, rowData } from "./data";
+import { leaveData, productData, tabListData, rowData, events } from "./data";
 
 function editRow(e = null, id) {
   console.log(id);
@@ -493,6 +494,9 @@ const App = () => {
           </tr>
         </tbody>
       </table>
+      <br />
+      <br />
+      <Calender events={events} />
     </div>
   );
 };

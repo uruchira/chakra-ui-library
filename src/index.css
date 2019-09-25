@@ -609,4 +609,13 @@ video {
   width: 920px;
 }
 
+.rbc-calendar {
+  min-height: 600px;
+}
+
+.rbc-toolbar .rbc-toolbar-label {
+  padding: 0;
+  text-align: left;
+}
+
 /*# sourceMappingURL=base.css.map */
