@@ -102,8 +102,6 @@ export const rowData = [
   }
 ];
 
-const now = new Date();
-
 export const events = [
   {
     id: 0,
@@ -135,9 +133,10 @@ export const events = [
 
   {
     id: 4,
-    title: "Some Event",
-    start: new Date(2018, 3, 9, 0, 0, 0),
-    end: new Date(2018, 3, 10, 0, 0, 0)
+    title: "Go to the bank",
+    allDay: true,
+    start: new Date(2019, 8, 2),
+    end: new Date(2019, 8, 2)
   },
   {
     id: 5,
@@ -212,7 +211,7 @@ export const events = [
   {
     id: 15,
     title: "Point in Time Event",
-    start: now,
-    end: now
+    start: new Date(),
+    end: new Date()
   }
 ];

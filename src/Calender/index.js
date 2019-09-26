@@ -13,6 +13,8 @@ const formats = {
   weekdayFormat: "dddd"
 };
 
+const CustomEvent = () => <span />;
+
 const CustomToolbar = props => {
   const { label, onNavigate } = props;
   return (
@@ -37,11 +39,17 @@ const Calendar = ({ events }) => {
       events={events}
       startAccessor="start"
       endAccessor="end"
+      formats={formats}
       views={{
         month: true
       }}
-      components={{ toolbar: CustomToolbar }}
-      formats={formats}
+      components={{
+        toolbar: CustomToolbar,
+        event: CustomEvent
+      }}
+      onSelectEvent={event => {
+        console.log(event);
+      }}
     />
   );
 };

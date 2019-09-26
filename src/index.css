@@ -618,4 +618,19 @@ video {
   text-align: left;
 }
 
+.rbc-today {
+  background-color: #fff;
+}
+
+.rbc-date-cell.rbc-now {
+  color: red;
+}
+
+.rbc-event {
+  border-radius: 0;
+  padding: 0;
+  height: 5px;
+  margin: 2px 0;
+}
+
 /*# sourceMappingURL=base.css.map */
