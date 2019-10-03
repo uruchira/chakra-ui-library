@@ -166,18 +166,9 @@ const App = () => {
             </td>
             <td>
               <Stack isInline>
-                <AvatarBasic
-                  name="Dan Abrahmov"
-                  src="http://bit.ly/dan-abramov"
-                />
-                <AvatarBasic
-                  name="Kent Dodds"
-                  src="http://bit.ly/kent-c-dodds"
-                />
-                <AvatarBasic
-                  name="Ryan Florence"
-                  src="http://bit.ly/ryan-florence"
-                />
+                <AvatarBasic name="Dan Abrahmov" />
+                <AvatarBasic name="Kent Dodds" />
+                <AvatarBasic name="Ryan Florence" />
               </Stack>
             </td>
           </tr>
